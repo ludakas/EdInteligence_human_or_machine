@@ -5,6 +5,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from random import randint
+import seaborn as sns
+sns.set()
 
 class File2DocSpace(Doc2Vec):
     
