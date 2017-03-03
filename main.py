@@ -170,12 +170,6 @@ print test_mat.shape
 # print mat2.shape
 # print sum(pca.explained_variance_ratio_)
 
-layers = ['relu']
-hidden_units = [1000]
-
-results = {}
-
-
 model = Sequential()
 model.add(Dense(1000, input_dim=1650))
 model.add(Activation('relu'))
@@ -198,6 +192,9 @@ h = model.fit(X_train, to_categorical(y_train),
 
 print model.predict_classes(test_mat)
 final_results = 1 - model.predict_classes(test_mat)
+
+
+# save labels
 with open("final_results.pkl", "wb") as f:
     pkl.dump(final_results, f)
 # {'relu 200': 0.75269913016523449, 'sigmoid 150': 0.53575066884876776, 'relu 150': 0.75188429193162554, 'sigmoid 50': 0.54114890600032728, 'sigmoid 200': 0.53625993535338456, 'relu 100': 0.73833773281356185, 'sigmoid 100': 0.53401915136824119, 'tanh 100': 0.53625993705325226, 'tanh 150': 0.53595437370217924, 'tanh 200': 0.53788960211921499, 'relu 50': 0.73253208451029195, 'tanh 50': 0.53870442238279459}
